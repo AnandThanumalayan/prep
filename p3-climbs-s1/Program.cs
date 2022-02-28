@@ -24,9 +24,23 @@ class Result
 
     public static int jumpingOnClouds(List<int> c)
     {
-        return 0;
+        int jumpCtr = 0;
+        int ctr = 0;
+        int maxIndex = c.Count() - 1;
+        if(c[0] == 1){
+            return 0;
+        }
+        while(ctr < maxIndex){
+            if ((ctr + 2 <= maxIndex) && c[ctr + 2] == 0){
+                ctr = ctr + 2;
+            }
+            else{
+                ctr = ctr + 1;
+            }
+            jumpCtr++;
+        }
+        return jumpCtr;
     }
-
 }
 
 class Solution
