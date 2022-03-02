@@ -26,7 +26,6 @@ class Result
 
     public static int countingValleys(int steps, string path)
     {
-        var totalTransitions = 0;
         var totalValleys = 0;
 
         char[] pathArray = path.ToCharArray();
@@ -45,10 +44,6 @@ class Result
             else
             {
                 directedStepCount = directedStepCount + 1;
-            }
-            if(directedStepCount == 0)
-            {
-                totalTransitions++;
             }
         }
         return totalValleys;
