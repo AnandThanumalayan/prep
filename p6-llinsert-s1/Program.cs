@@ -46,6 +46,13 @@ class Solution {
         }
     }
 
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position)
+    {
+        int index = 0;
+
+        while()
+    }
+
     static void PrintSinglyLinkedList(SinglyLinkedListNode node, string sep) {
         while (node != null) {
             Console.Write(node.data);
@@ -84,46 +91,7 @@ class Result
 
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position)
     {
-        int ctr = 0;
-        bool positionReached = false;
-        
-        while (llist != null) {
-            if (ctr == position -1){
-                positionReached = true;
 
-                llist.next.data = data;
-                llist.next.next = llist.next.next.next;
-            }
-            if(ctr == position){
-                nodeToInsert.next = llist;
-            }
-
-        llist = llist.next;
-        }
-    }
-
-    public static SinglyLinkedListNode insertNodeAtPosition_v1(SinglyLinkedListNode llist, int data, int position)
-    {
-        int ctr = 0;
-        SinglyLinkedListNode nodeToInsert = new SinglyLinkedListNode(data);
-        SinglyLinkedListNode head = new SinglyLinkedListNode(0);
-        
-        if (llist == null) {
-            head = nodeToInsert;
-        }
-        else {
-            while (llist != null) {
-                if (ctr == position -1){
-                    llist.next = nodeToInsert;
-                }
-                if(ctr == position){
-                    nodeToInsert.next = llist;
-                }
-
-            llist = llist.next;
-            }
-        }
-        return head;
     }
 
 }
@@ -144,9 +112,7 @@ class Result
 
         int position = Convert.ToInt32(Console.ReadLine());
 
-        // SinglyLinkedListNode llist_head = insertNodeAtPosition_v1(llist.head, data, position);
         SinglyLinkedListNode llist_head = insertNodeAtPosition(llist.head, data, position);
-        
 
         PrintSinglyLinkedList(llist_head, " ");
         Console.WriteLine();
